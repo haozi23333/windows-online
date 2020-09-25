@@ -3,29 +3,29 @@
 		"module": "es2015",
 		"moduleResolution": "node",
 		"target": "es5",
-
-
 		"jsx": "react",
 		"lib": [
 			"dom",
 			"es2017"
 		],
-
 		"alwaysStrict": true,
 		"sourceMap": true,
-
 		"forceConsistentCasingInFileNames": true,
 		"noImplicitAny": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"strictNullChecks": true,
-
 		"allowSyntheticDefaultImports": true
 	},
-
+	"baseUrl": ".",
+	"rootDir": ".",
+	"paths": {
+		"@/*": ["./src/*"]
+	},
 	"exclude": [
 		"node_modules",
 		"dist"
-	]
+	],
+	"typeRoots": ["node_modules/@types", "global.d.ts", "types"]
 }

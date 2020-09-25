@@ -7,22 +7,22 @@ import configureStore, { history } from './configureStore'
 
 const store = configureStore()
 const render = () => {
-  ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
-        <App history={history} />
-      </Provider>
-    </AppContainer>,
-    document.getElementById('react-root')
-  )
+	ReactDOM.render(
+		<AppContainer>
+			<Provider store={store}>
+				<App history={history} />
+			</Provider>
+		</AppContainer>,
+		document.getElementById('react-root')
+	)
 }
 
 render()
 
 // Hot reloading
 if (module.hot) {
-  // Reload components
-  module.hot.accept('./App', () => {
-    render()
-  })
+	// Reload components
+	module.hot.accept('./App', () => {
+		render()
+	})
 }
