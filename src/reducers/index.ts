@@ -3,14 +3,19 @@ import { History } from 'history'
 import { RouterState, connectRouter } from 'connected-react-router'
 import counterReducer from './counter'
 
-const rootReducer = (history: History) => combineReducers({
-  count: counterReducer,
-  router: connectRouter(history)
-})
+import fileSystemReducer, { IFileSystem } from 'src/reducers/IFileSystem'
+
+const rootReducer = (history: History) =>
+	combineReducers({
+		fileSystem: fileSystemReducer,
+		count: counterReducer,
+		router: connectRouter(history)
+	})
 
 export interface State {
-  count: number
-  router: RouterState
+	fileSystem: IFileSystem
+	count: number
+	router: RouterState
 }
 
 export default rootReducer

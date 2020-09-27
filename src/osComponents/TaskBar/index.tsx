@@ -1,9 +1,21 @@
 import React from 'react'
-import BaseContainer from '../../components/BaseContainer'
-import { compose } from 'ramda'
+import './index.less'
+import { Resizable } from 're-resizable'
 
 const TaskBar = () => {
-	return <div>123</div>
+	return (
+		<Resizable
+			className={'task-bar'}
+			defaultSize={{
+				width: '100%',
+				height: 44
+			}}
+			minHeight={44}
+			minWidth={'100%'}
+		>
+			<div className={'flex-box'}>🍎</div>
+		</Resizable>
+	)
 }
 
-export default compose(BaseContainer)(TaskBar)
+export default TaskBar

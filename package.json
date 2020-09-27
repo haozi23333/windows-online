@@ -11,12 +11,15 @@
   "license": "MIT",
   "devDependencies": {
     "@types/history": "^4.7.2",
-    "@types/react": "^16.4.18",
+    "@types/ramda": "^0.27.19",
+    "@types/react-beautiful-dnd": "^13.0.0",
+    "@types/react": "^16.9.49",
     "@types/react-dom": "^16.0.9",
     "@types/react-hot-loader": "^4.1.0",
     "@types/react-redux": "^6.0.9",
-    "@types/react-router": "^4.4.0",
-    "@types/react-router-dom": "^4.3.1",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/redux-localstorage": "^1.0.8",
     "@types/webpack-env": "^1.13.6",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
@@ -32,15 +35,17 @@
     "webpack-dev-server": "^3.1.11"
   },
   "dependencies": {
-    "@types/ramda": "^0.27.19",
     "connected-react-router": "^6.0.0",
     "history": "^4.7.2",
     "ramda": "^0.27.1",
-    "react": "^16.6.0",
+    "re-resizable": "^6.6.1",
+    "react": "^16.13.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.6.0",
-    "react-redux": "^6.0.0",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1"
+    "react-redux": "^7.2.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.1",
+    "redux-localstorage": "^0.4.1"
   }
 }
