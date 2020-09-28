@@ -16,6 +16,15 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@hot-loader/react-dom@^17.0.0-rc.2":
+  version "17.0.0-rc.2"
+  resolved "https://registry.npm.taobao.org/@hot-loader/react-dom/download/@hot-loader/react-dom-17.0.0-rc.2.tgz?cache=0&sync_timestamp=1600780088554&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hot-loader%2Freact-dom%2Fdownload%2F%40hot-loader%2Freact-dom-17.0.0-rc.2.tgz#024c963956e8150a81783df77135ddac1c0d7a57"
+  integrity sha1-AkyWOVboFQqBeD33cTXdrBwNelc=
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "0.20.0-rc.2"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -34,6 +43,14 @@
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.3.tgz#856c99cdc1551d22c22b18b5402719affec9839a"
   integrity sha512-cS5owqtwzLN5kY+l+KgKdRJ/Cee8tlmQoGQuIE9tWnSmS3JMKzmxo2HIAk2wODMifGwO20d62xZQLYz+RLfXmw==
+
+"@types/hoist-non-react-statics@^3.3.0":
+  version "3.3.1"
+  resolved "https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  integrity sha1-ESSq/lEYy1kZd66xzqrtEHDrA58=
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
 
 "@types/json-schema@^7.0.5":
   version "7.0.6"
@@ -76,19 +93,21 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-hot-loader@^4.1.0":
+"@types/react-hot-loader@^4.1.1":
   version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@types/react-hot-loader/-/react-hot-loader-4.1.1.tgz#8bc0a4add6b97ae833e5124a5591d5320026aa24"
-  integrity sha512-vsP4f1wz+rw13dEF0/W55O/gQT12xcjsf7EVWyttTtKNG7S3U767aSAAJP0PVV/792kq3dv8CkbIcLjzxcSBhQ==
+  resolved "https://registry.npm.taobao.org/@types/react-hot-loader/download/@types/react-hot-loader-4.1.1.tgz#8bc0a4add6b97ae833e5124a5591d5320026aa24"
+  integrity sha1-i8Ckrda5eugz5RJKVZHVMgAmqiQ=
   dependencies:
     react-hot-loader "*"
 
-"@types/react-redux@^6.0.9":
-  version "6.0.14"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.14.tgz#8ffeb52c4f4d578bf74418d9aff5af7289924e4f"
-  integrity sha512-bvpWqBOvz2V+EfZ9Qu1d3gFKYCIn/BYoGWAVt1c526tbiI9rtfaBbjutbbapmtEZaEfLuHj3Ljg9qho0SBSwUg==
+"@types/react-redux@^7.1.9":
+  version "7.1.9"
+  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.9.tgz#280c13565c9f13ceb727ec21e767abe0e9b4aec3"
+  integrity sha1-KAwTVlyfE863J+wh52er4Om0rsM=
   dependencies:
+    "@types/hoist-non-react-statics" "^3.3.0"
     "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
 "@types/react-router-dom@^5.1.5":
@@ -124,7 +143,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@^16.9.49":
+"@types/react@^16.4.18":
   version "16.9.49"
   resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.9.49.tgz?cache=0&sync_timestamp=1600761929617&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-16.9.49.tgz#09db021cf8089aba0cdb12a49f8021a69cce4872"
   integrity sha1-CdsCHPgImroM2xKkn4AhppzOSHI=
@@ -2005,6 +2024,11 @@ image-size@~0.5.0:
   resolved "https://registry.npm.taobao.org/image-size/download/image-size-0.5.5.tgz?cache=0&sync_timestamp=1599125294328&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fimage-size%2Fdownload%2Fimage-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
 
+immediate@~3.0.5:
+  version "3.0.6"
+  resolved "https://registry.npm.taobao.org/immediate/download/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+  integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
+
 immutable@^3.8.1:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
@@ -2396,6 +2420,13 @@ less@^3.12.2:
     native-request "^1.0.5"
     source-map "~0.6.0"
 
+lie@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/lie/download/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
+  integrity sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
+  dependencies:
+    immediate "~3.0.5"
+
 loader-runner@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
@@ -2418,6 +2449,13 @@ loader-utils@^2.0.0:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^2.1.2"
+
+localforage@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npm.taobao.org/localforage/download/localforage-1.9.0.tgz#f3e4d32a8300b362b4634cc4e066d9d00d2f09d1"
+  integrity sha1-8+TTKoMAs2K0Y0zE4GbZ0A0vCdE=
+  dependencies:
+    lie "3.1.1"
 
 locate-path@^3.0.0:
   version "3.0.0"
@@ -3427,10 +3465,24 @@ react-dom@^16.6.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-hot-loader@*, react-hot-loader@^4.3.12:
+react-hot-loader@*:
   version "4.12.18"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.18.tgz#a9029e34af2690d76208f9a35189d73c2dfea6a7"
   integrity sha512-qYD0Qi9lIbg9jLyfmodfqvAQqCBsoPKxAhca8Nxvy2/2pO5Q9r2kM28jN0bbbSnhwK8dJ7FjsfVtXKOxMW+bqw==
+  dependencies:
+    fast-levenshtein "^2.0.6"
+    global "^4.3.0"
+    hoist-non-react-statics "^3.3.0"
+    loader-utils "^1.1.0"
+    prop-types "^15.6.1"
+    react-lifecycles-compat "^3.0.4"
+    shallowequal "^1.1.0"
+    source-map "^0.7.3"
+
+react-hot-loader@^4.13.0:
+  version "4.13.0"
+  resolved "https://registry.npm.taobao.org/react-hot-loader/download/react-hot-loader-4.13.0.tgz?cache=0&sync_timestamp=1600777180755&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-hot-loader%2Fdownload%2Freact-hot-loader-4.13.0.tgz#c27e9408581c2a678f5316e69c061b226dc6a202"
+  integrity sha1-wn6UCFgcKmePUxbmnAYbIm3GogI=
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
@@ -3715,6 +3767,14 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
+
+scheduler@0.20.0-rc.2:
+  version "0.20.0-rc.2"
+  resolved "https://registry.npm.taobao.org/scheduler/download/scheduler-0.20.0-rc.2.tgz?cache=0&sync_timestamp=1600731954537&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fscheduler%2Fdownload%2Fscheduler-0.20.0-rc.2.tgz#5c48ac29e1a352a43c74cb5fc54c5ca94d8396fc"
+  integrity sha1-XEisKeGjUqQ8dMtfxUxcqU2Dlvw=
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 scheduler@^0.18.0:
   version "0.18.0"

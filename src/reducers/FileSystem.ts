@@ -17,42 +17,44 @@ export type IFile = {
 } & IBaseFileInfo
 
 export type IFolder = {
+	isFolder: boolean
 	files: (IFile | IFolder)[]
 } & IBaseFileInfo
 
-export type IFileSystem = {
-	path: string
-	files: (IFile | IFolder)[]
-}
-const DEFAULT_FILE_SYSTEM = {
-	path: '/',
-	name: 'root',
-	icon: '123123',
-	createDate: new Date(),
-	isFolder: true,
-	protect: true,
-	files: [
-		{
-			path: '/Desktop',
-			name: 'Desktop',
-			icon: '123123',
-			createDate: new Date(),
-			isFolder: true,
-			protect: true,
-			files: [
-				{
-					type: 'app',
-					path: '/Desktop/bin',
-					name: 'bin',
-					icon: '123123',
-					createDate: new Date(),
-					isFolder: false,
-					protect: true
-				}
-			]
-		}
-	]
-} as IFileSystem
+export type IFileSystem = (IFile | IFolder)[]
+
+const DEFAULT_FILE_SYSTEM = [
+	{
+		path: '/',
+		name: 'root',
+		icon: '123123',
+		createDate: new Date(),
+		isFolder: true,
+		protect: true,
+		files: [
+			{
+				path: '/Desktop',
+				name: 'Desktop',
+				icon: '123123',
+				createDate: new Date(),
+				isFolder: true,
+				protect: true,
+				files: [
+					{
+						type: 'app',
+						path: '/Desktop/bin',
+						name: 'bin',
+						icon: '123123',
+						createDate: new Date(),
+						isFolder: false,
+						protect: true
+					}
+				]
+			}
+		]
+	}
+] as IFileSystem
+
 const fileSystemReducer = (state: IFileSystem = DEFAULT_FILE_SYSTEM, action: Action) => {
 	switch (action.type) {
 		case 'INCREMENT':
@@ -61,4 +63,5 @@ const fileSystemReducer = (state: IFileSystem = DEFAULT_FILE_SYSTEM, action: Act
 			return state
 	}
 }
+
 export default fileSystemReducer
