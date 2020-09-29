@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.scoped.less'
 
 export type IWindowsIconType = 'bin' | 'full-bin' | 'folder'
 
@@ -11,6 +12,6 @@ export const WINDOWS_ICON_TYPE: {
 }
 
 const WindowsIcon = (props: { icon: IWindowsIconType | string }) => {
-	return <img src={`https://oss.yangger.cn/assets/windows/icons/${props.icon}.png`} alt={props.icon} />
+	return <img className={'windows-icon'} src={`https://oss.yangger.cn/assets/windows/windows-icon/${props.icon}.png`} alt={props.icon} />
 }
 export default WindowsIcon
