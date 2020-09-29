@@ -1,8 +1,9 @@
 import React from 'react'
-import { propEq, pick } from 'ramda'
-import { useSelector } from 'react-redux'
-import { State } from '../../reducers'
-import {IFileSystem, IFolder} from '../../reducers/FileSystem'
+// import { Droppable } from 'react-beautiful-dnd'
+import Folder from '../Folder'
+import File from '../File'
+import { IFile } from '../../reducers/FileSystem'
+import { useFilesWithPath } from '../../hooks/fileHooks'
 // import { Droppable } from 'react-beautiful-dnd'
 
 const FilesContainer = (props: {
@@ -10,18 +11,17 @@ const FilesContainer = (props: {
 	droppableId: string
 	// children: (provided: DroppableProvided, snapshot: DroppableStateSnapshot) => React.ReactElement<HTMLElement>
 }) => {
-	const Empty = Symbol()
-	const findWith = (predicate: any, transform: any, [first = Empty, ...rest]: any): any => {
-		return first === Empty
-			? null
-			: predicate(first)
-			? transform(first)
-			: findWith(predicate, transform, first.files) || findWith(predicate, transform, rest)
-	}
-	const findById = (path: string, arr: IFileSystem) => findWith(propEq('path', path), pick(['files']), arr)
-	const data = useSelector<State, IFolder>((state) => {
-		return findById(props.systemPath, state.fileSystem)
-	})
-	return <div style={{ color: '#fff' }}>{JSON.stringify(data)}</div>
+	const data = useFilesWithPath(props.systemPath)
+	return (
+		<div style={{ color: '#ffffff' }}>
+			{data.files.map((fileOrFolder) => {
+				if (fileOrFolder.isFolder) {
+					return <Folder key={fileOrFolder.path}>{JSON.stringify(fileOrFolder)}</Folder>
+				} else {
+					return <File key={fileOrFolder.path} file={fileOrFolder as IFile} />
+				}
+			})}
+		</div>
+	)
 }
 export default FilesContainer

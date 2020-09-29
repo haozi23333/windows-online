@@ -36,24 +36,27 @@ module.exports = {
 					{
 						loader: 'css-loader',
 						options: {
+							importLoaders: 2,
 							sourceMap: true
 						}
 					},
+					{ loader: 'scoped-css-loader' },
 					{
 						loader: 'less-loader'
 					}
 				]
 			},
 			{
-				test: /\.(png|jpe?g|gif|jp2|webp)$/,
+				test: /\.(png|jpe?g|gif|jp2|webp|svg)$/,
 				loader: 'file-loader',
 				options: {
 					name: 'assets/images/[name].[ext]'
 				}
 			},
 			{
-				test: /\.tsx?/,
-				loader: 'ts-loader'
+				test: /\.(tsx|jsx|js|ts)?$/,
+				use: 'babel-loader',
+				exclude: /node_modules/
 			}
 		]
 	},

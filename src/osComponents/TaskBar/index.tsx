@@ -13,7 +13,17 @@ const TaskBar = () => {
 			minHeight={44}
 			minWidth={'100%'}
 		>
-			<div className={'flex-box'}>🍎</div>
+			<div className={'flex-box'}>
+				<div className={'start-button global-hover-mask '}>
+					<i
+						className="iconfont icon-windows-10"
+						style={{
+							fontSize: '26px',
+							color: '#fff'
+						}}
+					/>
+				</div>
+			</div>
 		</Resizable>
 	)
 }

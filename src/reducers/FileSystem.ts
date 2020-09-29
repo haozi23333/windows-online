@@ -1,4 +1,5 @@
 import { Action } from 'redux'
+import { WINDOWS_ICON_TYPE } from '../components/WindowsIcon'
 
 type IBaseFileInfo = {
 	name: string
@@ -27,7 +28,7 @@ const DEFAULT_FILE_SYSTEM = [
 	{
 		path: '/',
 		name: 'root',
-		icon: '123123',
+		icon: WINDOWS_ICON_TYPE.FOLDER,
 		createDate: new Date(),
 		isFolder: true,
 		protect: true,
@@ -35,7 +36,7 @@ const DEFAULT_FILE_SYSTEM = [
 			{
 				path: '/Desktop',
 				name: 'Desktop',
-				icon: '123123',
+				icon: WINDOWS_ICON_TYPE.FOLDER,
 				createDate: new Date(),
 				isFolder: true,
 				protect: true,
@@ -44,7 +45,7 @@ const DEFAULT_FILE_SYSTEM = [
 						type: 'app',
 						path: '/Desktop/bin',
 						name: 'bin',
-						icon: '123123',
+						icon: WINDOWS_ICON_TYPE.BIN,
 						createDate: new Date(),
 						isFolder: false,
 						protect: true
