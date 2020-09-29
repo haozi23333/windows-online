@@ -1,13 +1,13 @@
 {
-  "name": "connected-react-router-example-typescript",
+  "name": "windows-online",
   "version": "1.0.0",
-  "description": "A basic example for Connected React Router with TypeScript",
+  "description": "A windows online for Connected React with TypeScript",
   "main": "src/index.tsx",
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --mode production"
   },
-  "author": "Supasate Choochaisri",
+  "author": "Yangger<i@yangger.cn>",
   "license": "MIT",
   "devDependencies": {
     "@hot-loader/react-dom": "^17.0.0-rc.2",

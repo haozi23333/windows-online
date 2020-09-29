@@ -1,8 +1,8 @@
 import React from 'react'
-import { propEq, omit } from 'ramda'
+import { propEq, pick } from 'ramda'
 import { useSelector } from 'react-redux'
 import { State } from '../../reducers'
-import { IFileSystem } from '../../reducers/FileSystem'
+import {IFileSystem, IFolder} from '../../reducers/FileSystem'
 // import { Droppable } from 'react-beautiful-dnd'
 
 const FilesContainer = (props: {
@@ -18,8 +18,8 @@ const FilesContainer = (props: {
 			? transform(first)
 			: findWith(predicate, transform, first.files) || findWith(predicate, transform, rest)
 	}
-	const findById = (path: string, arr: IFileSystem) => findWith(propEq('path', path), omit(['files']), arr)
-	const data = useSelector<State, IFileSystem>((state) => {
+	const findById = (path: string, arr: IFileSystem) => findWith(propEq('path', path), pick(['files']), arr)
+	const data = useSelector<State, IFolder>((state) => {
 		return findById(props.systemPath, state.fileSystem)
 	})
 	return <div style={{ color: '#fff' }}>{JSON.stringify(data)}</div>
