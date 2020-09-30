@@ -17,7 +17,7 @@ const Index = () => {
 						console.log(args)
 					}}
 				>
-					<FilesContainer droppableId={'desktop-app'} systemPath={'/Desktop'} />
+					<FilesContainer folderPath={'/Desktop'} />
 				</DragDropContext>
 			</div>
 			<TaskBar />

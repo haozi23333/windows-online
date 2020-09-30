@@ -12,6 +12,12 @@ export const WINDOWS_ICON_TYPE: {
 }
 
 const WindowsIcon = (props: { icon: IWindowsIconType | string }) => {
-	return <img className={'windows-icon'} src={`https://oss.yangger.cn/assets/windows/windows-icon/${props.icon}.png`} alt={props.icon} />
+	return (
+		<img
+			className={'windows-icon'}
+			src={`https://oss.yangger.cn/assets/windows/windows-icon/${props.icon}.png`}
+			alt={props.icon}
+		/>
+	)
 }
 export default WindowsIcon
