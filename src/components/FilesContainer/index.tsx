@@ -1,8 +1,8 @@
 import React from 'react'
-import { Droppable } from 'react-beautiful-dnd'
+import { Draggable, Droppable } from 'react-beautiful-dnd'
 import Folder from '../Folder'
 import File from '../File'
-import { IFile } from '../../reducers/FileSystem/type'
+import { IFile, IFolder } from '../../reducers/FileSystem/type'
 import { useFilesWithPath } from '../../hooks/fileHooks'
 import { useDispatch } from 'react-redux'
 import './index.scoped.less'
@@ -28,18 +28,29 @@ const FilesContainer = (props: { folderPath: string }) => {
 						className={'file-container'}
 					>
 						{data.files.map((fileOrFolder, index) => {
-							if (fileOrFolder.isFolder) {
-								return <Folder key={fileOrFolder.path}>{JSON.stringify(fileOrFolder)}</Folder>
-							} else {
-								return (
-									<File
-										parentPath={props.folderPath}
-										index={index}
-										key={fileOrFolder.path}
-										file={fileOrFolder as IFile}
-									/>
-								)
-							}
+							return (
+								<Draggable draggableId={fileOrFolder.path} key={fileOrFolder.path} index={index}>
+									{(provided) => {
+										if (fileOrFolder.isFolder) {
+											return (
+												<Folder
+													ref={provided.innerRef}
+													parentPath={props.folderPath}
+													folder={fileOrFolder as IFolder}
+												/>
+											)
+										} else {
+											return (
+												<File
+													ref={provided.innerRef}
+													parentPath={props.folderPath}
+													file={fileOrFolder as IFile}
+												/>
+											)
+										}
+									}}
+								</Draggable>
+							)
 						})}
 						{provided.placeholder}
 					</div>

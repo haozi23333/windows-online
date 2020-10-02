@@ -22,12 +22,20 @@ export default {
 						{
 							type: 'app',
 							path: '/Desktop/bin',
-							name:
-								'binbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbinbin',
+							name: 'bin',
 							icon: WINDOWS_ICON_TYPE.BIN,
 							createDate: new Date(),
 							isFolder: false,
 							protect: true
+						},
+						{
+							path: '/Desktop/folderTest',
+							name: 'folderTest',
+							icon: WINDOWS_ICON_TYPE.FOLDER,
+							createDate: new Date(),
+							isFolder: true,
+							protect: false,
+							files: []
 						}
 					]
 				}
