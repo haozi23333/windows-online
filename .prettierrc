@@ -12,5 +12,7 @@
     { "files": ["*.tsx", "*.ts"], "options": { "tabWidth": 4, "parser": "typescript" } },
     { "files": ["*.js", "*.jsx"], "options": { "tabWidth": 4, "parser": "babel" } },
     { "files": [".eslintrc", "*.json"], "options": {"tabWidth": 4, "parser": "json" } }
-  ]
+  ],
+  "importOrder":  ["react", "^@/(.*)$", "^[./]"],
+  "importOrderSeparation": true
 }

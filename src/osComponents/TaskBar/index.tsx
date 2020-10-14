@@ -1,6 +1,8 @@
-import React from 'react'
-import './index.less'
 import { Resizable } from 're-resizable'
+
+import React from 'react'
+
+import './index.less'
 
 const TaskBar = () => {
 	return (

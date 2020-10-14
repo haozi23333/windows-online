@@ -1,9 +1,12 @@
 import React, { forwardRef } from 'react'
-import { IFolder } from '../../reducers/FileSystem/type'
-import { UPDATE_CHECKED_FILES_WITH_FILEPATH } from '../../reducers/types'
 import { useDispatch } from 'react-redux'
-import WindowsIcon from '../../components/WindowsIcon'
-import { useFileIsChecked } from '../../hooks/fileHooks'
+
+import FileOrFolderClickableBox from '@/components/FilesContainer/FileOrFolderClickableBox'
+import WindowsIcon from '@/components/WindowsIcon'
+import { useFileIsChecked } from '@/hooks/fileHooks'
+import { IFolder } from '@/redux/FileSystem/type'
+import { UPDATE_CHECKED_FILE_WITH_FILEPATH } from '@/redux/types'
+
 import '../File/index.scoped.less'
 import './index.scoped.less'
 
@@ -13,19 +16,22 @@ type IFolderProps = {
 }
 
 const Folder = forwardRef<HTMLDivElement, IFolderProps>((props, ref) => {
-	const folder = props.folder
+	const { folder, parentPath, ...rest } = props
 	const dispatch = useDispatch()
-	const isChecked = useFileIsChecked(props.parentPath, folder.path)
+	const isChecked = useFileIsChecked(parentPath, folder.path)
 	return (
-		<div
+		<FileOrFolderClickableBox
+			{...rest}
 			ref={ref}
-			onClick={(e) => {
-				e.stopPropagation()
+			onClick={() => {
 				dispatch({
-					type: UPDATE_CHECKED_FILES_WITH_FILEPATH,
+					type: UPDATE_CHECKED_FILE_WITH_FILEPATH,
 					path: props.parentPath,
-					files: [folder.path]
+					file: folder.path
 				})
+			}}
+			onDoubleClick={(event) => {
+				console.log(event)
 			}}
 			className={['folder', 'file', isChecked ? 'checked' : ''].join(' ')}
 		>
@@ -33,7 +39,7 @@ const Folder = forwardRef<HTMLDivElement, IFolderProps>((props, ref) => {
 				<WindowsIcon icon={folder.icon} />
 			</div>
 			<div className={'file-name file-default-hidden-text'}>{folder.name}</div>
-		</div>
+		</FileOrFolderClickableBox>
 	)
 })
 

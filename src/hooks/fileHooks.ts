@@ -1,7 +1,7 @@
-import { IFolder } from '../reducers/FileSystem/type'
+import { IFolder } from '../redux/FileSystem/type'
 import { pick, propEq } from 'ramda'
 import { useSelector } from 'react-redux'
-import { IOsState } from '../reducers'
+import { IOsState } from '../redux'
 import { useEffect, useState } from 'react'
 
 /**

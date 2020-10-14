@@ -1,12 +1,14 @@
 import React from 'react'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
-import Folder from '../Folder'
-import File from '../File'
-import { IFile, IFolder } from '../../reducers/FileSystem/type'
-import { useFilesWithPath } from '../../hooks/fileHooks'
 import { useDispatch } from 'react-redux'
+
+import { useFilesWithPath } from '@/hooks/fileHooks'
+import { IFile, IFolder } from '@/redux/FileSystem/type'
+import { CLEAR_CHECKED_FILES_WITH_FILEPATH } from '@/redux/types'
+
+import File from '../File'
+import Folder from '../Folder'
 import './index.scoped.less'
-import { CLEAR_CHECKED_FILES_WITH_FILEPATH } from '../../reducers/types'
 
 const FilesContainer = (props: { folderPath: string }) => {
 	const data = useFilesWithPath(props.folderPath)
@@ -34,6 +36,8 @@ const FilesContainer = (props: { folderPath: string }) => {
 										if (fileOrFolder.isFolder) {
 											return (
 												<Folder
+													{...provided.draggableProps}
+													{...provided.dragHandleProps}
 													ref={provided.innerRef}
 													parentPath={props.folderPath}
 													folder={fileOrFolder as IFolder}
@@ -42,6 +46,8 @@ const FilesContainer = (props: { folderPath: string }) => {
 										} else {
 											return (
 												<File
+													{...provided.draggableProps}
+													{...provided.dragHandleProps}
 													ref={provided.innerRef}
 													parentPath={props.folderPath}
 													file={fileOrFolder as IFile}
