@@ -11,7 +11,7 @@ type IFileOrFolderClickableBoxProps = {
 }
 const FileOrFolderClickableBox = forwardRef<HTMLDivElement, IFileOrFolderClickableBoxProps>((props, ref) => {
 	const { onClick, onDoubleClick, children, className, ...rest } = props
-	const [handleClick, handleDoubleClick] = useClickPreventionOnDoubleClick(onClick, onDoubleClick)
+	const [handleClick, handleDoubleClick] = useClickPreventionOnDoubleClick(onClick, onDoubleClick, 100)
 	return (
 		<div
 			{...rest}

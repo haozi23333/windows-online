@@ -1,4 +1,4 @@
-import { symmetricDifference } from 'ramda'
+import { symmetricDifference, equals } from 'ramda'
 import { Reducer } from 'redux'
 
 import {
@@ -25,7 +25,9 @@ const fileSystemReducer: Reducer<IFileSystemState, IFilesSystemActions> = (state
 			}
 			return state
 		case UPDATE_CHECKED_FILE_WITH_FILEPATH:
-			state.checkFilePaths[action.path] = [action.file]
+			state.checkFilePaths[action.path] = equals([action.file], state.checkFilePaths[action.path])
+				? []
+				: [action.file]
 			return state
 		case CLEAR_CHECKED_FILES_WITH_FILEPATH:
 			state.checkFilePaths[action.path] = []

@@ -1,14 +1,15 @@
 import React from 'react'
-import useCancellablePromises from '@/hooks/useCancelAblePromise'
-import { cancelablePromise } from '@/utils/cancelablePromise'
-import { delay } from '@/utils'
 
-const useClickPreventionOnDoubleClick = (onClick: any, onDoubleClick: any) => {
+import useCancellablePromises from '@/hooks/useCancelAblePromise'
+import { delay } from '@/utils'
+import { cancelablePromise } from '@/utils/cancelablePromise'
+
+const useClickPreventionOnDoubleClick = (onClick: any, onDoubleClick: any, delayTime: number = 300) => {
 	const api = useCancellablePromises()
 
 	const handleClick = (e: React.MouseEvent<any, MouseEvent>) => {
 		api.clearPendingPromises()
-		const waitForClick = cancelablePromise(delay(300))
+		const waitForClick = cancelablePromise(delay(delayTime))
 		api.appendPendingPromise(waitForClick)
 
 		return waitForClick.promise
