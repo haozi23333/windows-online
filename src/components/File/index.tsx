@@ -5,7 +5,7 @@ import FileOrFolderClickableBox from '@/components/FilesContainer/FileOrFolderCl
 import WindowsIcon from '@/components/WindowsIcon'
 import { useFileIsChecked } from '@/hooks/fileHooks'
 import { IFile } from '@/redux/FileSystem/type'
-import { UPDATE_CHECKED_FILE_WITH_FILEPATH } from '@/redux/types'
+import { ADD_PROCESS_WITH_APP, UPDATE_CHECKED_FILE_WITH_FILEPATH } from '@/redux/types'
 
 import './index.scoped.less'
 
@@ -32,7 +32,17 @@ const File = forwardRef<HTMLDivElement, IFileProps>((props, ref) => {
 				})
 			}}
 			onDoubleClick={() => {
-				console.log('open FilesContainer')
+				if (file.type === 'text') {
+					dispatch({
+						type: ADD_PROCESS_WITH_APP,
+						appName: 'fileEditor'
+					})
+				} else {
+					dispatch({
+						type: ADD_PROCESS_WITH_APP,
+						appName: file.name
+					})
+				}
 			}}
 			className={['file', isChecked ? 'checked' : ''].join(' ')}
 		>

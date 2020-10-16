@@ -5,7 +5,7 @@ import FileOrFolderClickableBox from '@/components/FilesContainer/FileOrFolderCl
 import WindowsIcon from '@/components/WindowsIcon'
 import { useFileIsChecked } from '@/hooks/fileHooks'
 import { IFolder } from '@/redux/FileSystem/type'
-import { UPDATE_CHECKED_FILE_WITH_FILEPATH } from '@/redux/types'
+import { ADD_PROCESS_WITH_APP, UPDATE_CHECKED_FILE_WITH_FILEPATH } from '@/redux/types'
 
 import '../File/index.scoped.less'
 import './index.scoped.less'
@@ -30,8 +30,11 @@ const Folder = forwardRef<HTMLDivElement, IFolderProps>((props, ref) => {
 					file: folder.path
 				})
 			}}
-			onDoubleClick={(event) => {
-				console.log(event)
+			onDoubleClick={() => {
+				dispatch({
+					type: ADD_PROCESS_WITH_APP,
+					appName: 'fileExplorer'
+				})
 			}}
 			className={['folder', 'file', isChecked ? 'checked' : ''].join(' ')}
 		>

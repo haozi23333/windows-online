@@ -13,6 +13,9 @@ import './index.scoped.less'
 const FilesContainer = (props: { folderPath: string }) => {
 	const data = useFilesWithPath(props.folderPath)
 	const dispatch = useDispatch()
+	const isFolder = (FileOrFolder: IFile | IFolder): FileOrFolder is IFolder => {
+		return (FileOrFolder as IFolder).isFolder
+	}
 	return (
 		<Droppable droppableId={props.folderPath}>
 			{(provided, snapshot) => {
@@ -33,14 +36,14 @@ const FilesContainer = (props: { folderPath: string }) => {
 							return (
 								<Draggable draggableId={fileOrFolder.path} key={fileOrFolder.path} index={index}>
 									{(provided) => {
-										if (fileOrFolder.isFolder) {
+										if (isFolder(fileOrFolder)) {
 											return (
 												<Folder
 													{...provided.draggableProps}
 													{...provided.dragHandleProps}
 													ref={provided.innerRef}
 													parentPath={props.folderPath}
-													folder={fileOrFolder as IFolder}
+													folder={fileOrFolder}
 												/>
 											)
 										} else {
@@ -50,7 +53,7 @@ const FilesContainer = (props: { folderPath: string }) => {
 													{...provided.dragHandleProps}
 													ref={provided.innerRef}
 													parentPath={props.folderPath}
-													file={fileOrFolder as IFile}
+													file={fileOrFolder}
 												/>
 											)
 										}
